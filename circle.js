@@ -11,5 +11,6 @@ function drawCircle() {
   var x = circle_path_radius*cos(time) + circle_path_center_x;
   var y = circle_path_radius*sin(time) + circle_path_center_y;
 
+  fill('white');
   circle(x, y, 100)
 }
