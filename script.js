@@ -9,6 +9,10 @@ function projectSelected() {
         setupScript = function() {};
         drawScript = drawFlags;
     }
+    else if (projectsSelect.value === 'Circle') {
+        setupScript = setupCircle;
+        drawScript = drawCircle;
+    }
 
     setupScript();
 }
