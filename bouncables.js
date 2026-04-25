@@ -26,7 +26,9 @@ class Bouncable {
 }
 
 function setupBouncables() {
-    for (var i = 0; i < 100; i++) {
+    bouncables = [];
+
+    for (var i = 0; i < 1; i++) {
         bouncables.push(new Bouncable(
             color(random(0, 255), random(0, 255), random(0, 255)),
             random(50, 350), 

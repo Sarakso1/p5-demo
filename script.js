@@ -13,6 +13,10 @@ function projectSelected() {
         setupScript = setupCircle;
         drawScript = drawCircle;
     }
+    else if (projectsSelect.value === 'snake') {
+        setupScript = setupSnake;
+        drawScript = drawSnake;
+    }
 
     setupScript();
 }
