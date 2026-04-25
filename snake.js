@@ -1,4 +1,5 @@
 const cellSize = 25;
+const directionInitial = 'r';
 
 const snakeHead = {
     image: null,
@@ -7,6 +8,8 @@ const snakeHead = {
     sizeX: 50,
     sizeY: 50
 };
+
+let direction = directionInitial;
 
 function drawHead() {
     image(
@@ -31,9 +34,35 @@ function drawGrid() {
 function drawSnake() {
     drawGrid();
 
+    if(direction === 'r') {
+        snakeHead.positionX += cellSize;
+    }
+    else if(direction === 'l'){
+        snakeHead.positionX -= cellSize;
+    }
+    else if(direction === 'u'){
+        snakeHead.positionY -= cellSize;
+    }
+    else if(direction === 'd'){
+        snakeHead.positionY += cellSize;
+    }
     drawHead();
 }
 
+function keyPressedSnake(){
+    if (key === 'a' && direction !== 'r'){
+        direction = 'l';
+    }
+    if (key === 'd' && direction !== 'l'){
+        direction = 'r';
+    }
+    if (key === 'w' && direction !== 'd'){
+        direction = 'u';
+    }
+    if (key === 's' && direction !== 'u'){
+        direction = 'd';
+    }
+}
 function setupSnake() {
     snakeHead.image = loadImage('assets/images/snake-head.png');
 }
