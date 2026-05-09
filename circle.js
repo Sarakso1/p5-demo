@@ -1,7 +1,3 @@
-function setupCircle() {
-    frameRate = (100);
-}
-
 function drawCircle() {
   var circle_path_radius = 100;
   var circle_path_center_x = 200;

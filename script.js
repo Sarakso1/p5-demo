@@ -14,7 +14,8 @@ function projectSelected() {
         drawScript = drawFlags;
     }
     else if (projectsSelect.value === 'Circle') {
-        setupScript = setupCircle;
+        frameRate(100);
+        setupScript = function() {};
         drawScript = drawCircle;
     }
     else if (projectsSelect.value === 'snake') {
