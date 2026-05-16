@@ -19,7 +19,7 @@ function projectSelected() {
         drawScript = drawCircle;
     }
     else if (projectsSelect.value === 'snake') {
-        frameRate(10);
+        frameRate(4);
         setupScript = setupSnake;
         drawScript = drawSnake;
         keyPressedScript = keyPressedSnake;
