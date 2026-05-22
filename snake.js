@@ -1,7 +1,8 @@
-const cellSize = 25;
+const cellSize = 40;
 const directionInitial = 'r';
 
 const tail = [];
+
 
 const snakeHead = {
     cellX: null,
@@ -68,9 +69,8 @@ function drawGrid() {
 
 function drawSnake() {
     drawGrid();
-    drawTail();
 
-    
+    drawTail();
 
     if (snakeHead.direction === 'r') {
         snakeHead.cellX += 1;
@@ -83,8 +83,10 @@ function drawSnake() {
     }
 
     if (snakeHead.cellX === food.cellX && snakeHead.cellY === food.cellY) {
-        food.cellX = getRandomFoodCellPosition().x;
-        food.cellY = getRandomFoodCellPosition().y;
+        const newFoodPosition = getRandomFoodCellPosition();
+
+        food.cellX = newFoodPosition.x;
+        food.cellY = newFoodPosition.y;
 
         tail.unshift({
             cellX: tail[0].cellX,
@@ -92,7 +94,6 @@ function drawSnake() {
         });
     }
 
-        
     image(
         food.image,
         cellSize * food.cellX,
@@ -100,6 +101,7 @@ function drawSnake() {
         food.sizeX,
         food.sizeY
     );
+
     drawHead();
 }
 
@@ -107,8 +109,10 @@ function drawTail() {
     let index = 0;
 
     while (index <= tail.length - 2) {
-        tail[index].cellX = tail[index + 1].cellX
-        tail[index].cellY = tail[index + 1].cellY
+        tail[index].cellX = tail[index + 1].cellX;
+        tail[index].cellY = tail[index + 1].cellY;
+
+        index++;
     }
 
     tail[tail.length - 1].cellX = snakeHead.cellX;
@@ -124,7 +128,6 @@ function drawTail() {
         );
     });
 }
-
 
 function keyPressedSnake() {
     if (key === 'a' && snakeHead.direction !== 'r') {
@@ -158,10 +161,12 @@ function setupSnake() {
     snakeHead.cellX = 2;
     snakeHead.cellY = 2;
 
-    snakeTailSegment.image = loadImage('assets/images/snake-bodySegment.png')
-    tail.lenght = 0;
+    snakeTailSegment.image = loadImage('assets/images/GreenSquare.png');
+
+    tail.length = 0;
+    
     tail.push({
         cellX: null,
         cellY: null
-    })
+    });
 }
