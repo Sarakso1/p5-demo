@@ -20,15 +20,19 @@
     <script src="snake.js"></script>
     <script src="script.js"></script>
 
-
-    <label for="Projects">Select a project</label>
+    <div id="p5-wrapper">
+        <label for="Projects">Select a project</label>
     
-    <select id="Projects" onchange="projectSelected()">
-      <option disabled selected></option>
-      <option value="Bouncables">Bouncables</option>
-      <option value="Flags">Flags</option>
-      <option value="Circle">Circle</option>
-      <option value="snake">Snake</option>
-    </select>
+      <select id="Projects" onchange="projectSelected()">
+        <option disabled selected></option>
+        <option value="Bouncables">Bouncables</option>
+        <option value="Flags">Flags</option>
+        <option value="Circle">Circle</option>
+        <option value="snake">Snake</option>
+      </select>
+
+      <div id="p5-canvas"></div>
+    </div>
+    
   </body>
 </html>

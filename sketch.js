@@ -5,11 +5,12 @@ var setupScript = function() {};
 var drawScript = function() {};
 var keyPressedScript = function () {};
 
-var canvasX = 400;
-var canvasY = 400;
+var canvasX = 500;
+var canvasY = 500;
 
 function setup() {
-  createCanvas(canvasX, canvasY);
+  var canvas = createCanvas(canvasX, canvasY);
+  canvas.parent('p5-canvas')
 }
 
 function draw() {
